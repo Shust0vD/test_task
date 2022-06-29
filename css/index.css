@@ -6,7 +6,7 @@
   background: #FAFAFA;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.frame_9{
+.frame_li_activity{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,7 +16,7 @@
   height: 40px;
   /* background: #F1F1F1; */
 }
-.frame_12{
+.frame_li_map{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,7 +25,7 @@
   gap: 8px;
   height: 40px;
 }
-.frame_13{
+.frame_li_time{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -174,9 +174,6 @@ margin: 0px;
   align-items: flex-start;
   margin: 20px;
 }
-
-
-
 .preloader {
     position: fixed;
     left: 0px;
@@ -197,11 +194,39 @@ margin: 0px;
 .frame_map{
   display: flex;
   align-items: center;
-  padding: 32px 50px;
+/*  padding: 32px 50px;*/
   margin: 20px;
   background: #FFFFFF;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   box-sizing:border-box;
   border-width: 0px !important;
   border-radius: 0px !important;
+}
+.frame_timer{
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  box-sizing:border-box;
+  border-width: 0px !important;
+  border-radius: 0px !important;
+}
+.title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #505050;
+}
+.time{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #505050;
 }

@@ -52,7 +52,23 @@ Router.prototype = {
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     scope.rootElem.innerHTML = this.responseText;
+
+                    var elem = document.getElementById('scriptID');
+                    var script = document.createElement('script');
+                    var scriptURL = 'scripts/' + htmlName;
+                    script.src = scriptURL.replace('.html', '.js');
+                    script.id = 'scriptID';
+
+                    elem.replaceWith(script);
+
+                    document.querySelector('.frame_li_activity').style.background = '';
+                    document.querySelector('.frame_li_map').style.background = '';
+                    document.querySelector('.frame_li_time').style.background = '';
+
+                    var frame = htmlName.replace('.html', '');
+                    document.querySelector('.frame_li_'+frame).style.background = '#F1F1F1';
                 }
+                    
             };
             xhttp.open('GET', url, true);
             xhttp.send();
