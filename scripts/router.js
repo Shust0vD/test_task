@@ -12,6 +12,10 @@ function Router(routes) {
     }
 }
 
+function scriptExists(url) {
+  return document.querySelectorAll(`script[src="${url}"]`).length > 0;
+}
+
 Router.prototype = {
     routes: undefined,
     rootElem: undefined,
@@ -53,13 +57,13 @@ Router.prototype = {
                 if (this.readyState === 4 && this.status === 200) {
                     scope.rootElem.innerHTML = this.responseText;
 
-                    var scriptID = htmlName.replace('.html', '');
-                    if (!document.getElementById(scriptID))
+                    var scriptURL = 'scripts/' + htmlName;
+                    scriptURL = scriptURL.replace('.html', '.js');
+                    console.log('scriptURL: ', scriptURL)
+                    if (!scriptExists(scriptURL))
                     {
                         var script = document.createElement('script');
-                        var scriptURL = 'scripts/' + htmlName;
-                        script.src = scriptURL.replace('.html', '.js');
-                        script.id = scriptID;
+                        script.src = scriptURL;
                         document.body.append(script);
                     }
 
