@@ -53,13 +53,15 @@ Router.prototype = {
                 if (this.readyState === 4 && this.status === 200) {
                     scope.rootElem.innerHTML = this.responseText;
 
-                    var elem = document.getElementById('scriptID');
-                    var script = document.createElement('script');
-                    var scriptURL = 'scripts/' + htmlName;
-                    script.src = scriptURL.replace('.html', '.js');
-                    script.id = 'scriptID';
-
-                    elem.replaceWith(script);
+                    var scriptID = htmlName.replace('.html', '');
+                    if (!document.getElementById(scriptID))
+                    {
+                        var script = document.createElement('script');
+                        var scriptURL = 'scripts/' + htmlName;
+                        script.src = scriptURL.replace('.html', '.js');
+                        script.id = scriptID;
+                        document.body.append(script);
+                    }
 
                     document.querySelector('.frame_li_activity').style.background = '';
                     document.querySelector('.frame_li_map').style.background = '';

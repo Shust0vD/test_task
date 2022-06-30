@@ -2,7 +2,7 @@ var entryDate = Date.parse(localStorage.getItem('entryDate'));
 var now = Date.parse(new Date());
 var diff = now - entryDate;
 
-var p = document.getElementById("time");
+var p = document.getElementById("timer");
 p.innerHTML = time()
 
  var currentTime; 
